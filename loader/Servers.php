@@ -12,7 +12,8 @@ class Servers {
     // empty constructor
   }
 
-  static getConnections() {
+  static function getConnections() {
+
     self::$a_connections = Spyc::YAMLLoad(BASEPATH.'connect.yaml');
 
   }
@@ -22,11 +23,11 @@ class Servers {
 function dbConnect() {
 
   $a_db = Servers::getConnections();
-  $dbh  = mysql_connect($a_db['a_dbConnect']['host'], $a_db['a_dbConnect']['user'], $a_db['a_dbConnect']['pass'], $bool_new_link);
+  $dbh  = mysql_connect($a_db['a_dbConnect']['host'], $a_db['a_dbConnect']['user'], $a_db['a_dbConnect']['pass']);
 
   if ( !$dbh || !mysql_select_db($a_db['a_dbConnect']['db'])) {
-    header("location: /sorry_db_down.php");^M
-    dieGracefully('dbConnect failed :: ' .$_SERVER['PHP_SELF'].' :: mysql_error()= ' .mysql_error());
+    header("location: /failwhale.php");
+    die('dbConnect failed :: ' .$_SERVER['PHP_SELF'].' :: mysql_error()= ' .mysql_error());
     return false;  //we catch this problem when func called
   } else  {
     return $dbh;
