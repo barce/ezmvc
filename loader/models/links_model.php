@@ -3,6 +3,9 @@
 
 class Links_Model {
 
+  var $url;
+  var $short_link;
+  var $clicks;
 
   function __construct()
   {
