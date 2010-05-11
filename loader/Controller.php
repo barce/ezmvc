@@ -21,7 +21,14 @@ class Controller {
     print $this->request . "<br/>\n";
     $a_requests = split('/', $this->request); 
     print_r($a_requests);
+
+    // autoload model
+    require_once(BASEPATH.'models/'. $a_requests[1] . '_model.php');
+    // autoload default view
+    require_once(BASEPATH.'views/'. $a_requests[1] . '.php');
+    // load controller
     require_once(BASEPATH.'controllers/'. $a_requests[1] . '.php');
+    
     $my_class = ucfirst($a_requests[1]);
     $my_ct    = new $my_class();
 
