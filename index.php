@@ -15,6 +15,7 @@ define('BASEPATH', $system_folder.'/');
  *
  */
 define('EXT', '.php');
+require_once BASEPATH.'Servers'.EXT;
 require_once BASEPATH.'Controller'.EXT;
 
 ?>

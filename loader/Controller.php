@@ -24,8 +24,6 @@ class Controller {
 
     // autoload model
     require_once(BASEPATH.'models/'. $a_requests[1] . '_model.php');
-    // autoload default view
-    require_once(BASEPATH.'views/'. $a_requests[1] . '.php');
     // load controller
     require_once(BASEPATH.'controllers/'. $a_requests[1] . '.php');
     
@@ -34,7 +32,7 @@ class Controller {
 
     // TODO: parse rest of a_requests
     if ($a_requests[2]) {
-      $my_ct->$a_requests[2]();
+      $my_ct->$a_requests[2]($a_requests[3]);
       return;
     }
 
