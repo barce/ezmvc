@@ -4,7 +4,7 @@ RewriteEngine on
 # RewriteRule ^(.*)$ http://m.mychamberapp.com/$1 [L,R=301]
 
 
-RewriteCond $1 !^(index\.php|images|robots\.txt|winfo\.php|css|js)
+RewriteCond $1 !^(index\.php|images|robots\.txt|winfo\.php|css|js|favicon\.ico)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php/$1 [L]
