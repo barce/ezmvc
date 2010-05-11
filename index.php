@@ -4,7 +4,7 @@
 error_reporting(E_ALL); // this is great for testing and debugging
 // error_reporting(E_ALL & ~E_NOTICE); // in prod use this
 
-$system_folder = "system";
+$system_folder = "loader";
 define('BASEPATH', $system_folder.'/');
 
 
@@ -15,6 +15,6 @@ define('BASEPATH', $system_folder.'/');
  *
  */
 define('EXT', '.php');
-require_once BASEPATH.'loader/Controller'.EXT;
+require_once BASEPATH.'Controller'.EXT;
 
 ?>
