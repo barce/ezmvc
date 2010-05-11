@@ -9,6 +9,9 @@ class Links {
   }
 
   function index() {
+    $links = new Links_Model();
+
+    $links->get_all();
     echo 'index called';
 
   }
