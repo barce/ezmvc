@@ -4,12 +4,13 @@
   <title><?= $title ?></title>
   <meta name="description" content="links">
   <link rel="Shortcut Icon" type="image/ico" href="/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="/css/screen.css?<?= time() ?>" media="screen">
+  <link rel="stylesheet" type="text/css" href="http://www.codebelay.com/labs/ezmvc/css/screen.css?<?= time() ?>" media="screen">
   <!--[if lte IE 7]>
-  <link rel="stylesheet" type="text/css" href="/css/ie.css?<?= time() ?>" media="screen">
+  <link rel="stylesheet" type="text/css" href="http://www.codebelay.com/labs/ezmvc/css/ie.css?<?= time() ?>" media="screen">
   <![endif]-->
 
-<script src="/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<!-- <script src="/js/jquery-1.4.2.min.js" type="text/javascript"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
 
 <script type="text/javascript"> 
 // <![CDATA[
