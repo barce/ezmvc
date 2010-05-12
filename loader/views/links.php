@@ -15,6 +15,10 @@
 // <![CDATA[
 
 $(document).ready(function(){
+
+  $("#urls").load('/links/get_all');
+  $("#newurl").load('/links/get_last_insert');
+
   $("#myForm").submit(function() {
   // we want to store the values from the form input box, then send via ajax below
   var url     = $('#url').attr('value');
@@ -24,21 +28,57 @@ $(document).ready(function(){
       url: "/links/add",
       data: "url="+ url, 
       success: function(){
-        $('#pressed').hide(function(){$('div.success').fadeIn();});
+        $('#pressed').fadeOut();
+        $('#pressed').fadeIn();
+        
+
+        $("#newurl").fadeOut();
+        $("#newurl").load('/links/get_last_insert');
+        $("#newurl").fadeIn();
+        $("#urls").load('/links/get_all');
+        // $("#urls").slideDown();
+
+
+        // $('#first').css({backgroundColor: '#fff'}); 
+        // $('#first').slideDown('slow');
+        // $('#first').animate({backgroundColor: '#000' }, 5000); 
+
 
       }
   });
   return false;
   });
+
+
+  // $("#urls").load
 });
     // ]]> 
 </script> 
+<style type="text/css">
+#all {
+  border: 5px solid #f00;
+}
+#first {
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 2px 2px 2px 2px;
+  height: 25px;
+}
+.row {
+  background-color: #fff;
+  border: 1px solid #000;
+  margin: 2px 2px 2px 2px;
+  height: 25px;
+}
+.url {
+  float: left;
+  margin-right: 10px;
+
+}
+</style>
 </head>
 
 <body> 
-<div id="success">
-success
-</div>
 
 <form id="myForm" method="POST" action="/links/add">
 Add a url to shorten
@@ -46,6 +86,12 @@ Add a url to shorten
 <input type='submit' class="button" id='pressed' name='pressed' value='Shorten'>
 </form>
 
+<div id='newurl'>
+please turn on javascript
+</div>
+<hr>
+<div id='urls'>
+</div>
 
 
 </body>

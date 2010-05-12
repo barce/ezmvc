@@ -16,6 +16,55 @@ class Links {
     include(BASEPATH.'views/links.php');
   }
 
+  function get_last_insert() {
+
+    $links = new Links_Model();
+    $a_links = $links->get_last_insert();
+    foreach ($a_links as $row) {
+
+        print $row['url'];
+        print "&nbsp;";
+  
+         print "<a href='/s/t/" . $row['short_link'] . "'>http://". $_SERVER['SERVER_NAME'] . "/s/t/" . $row['short_link'] . "</a>&nbsp;"; 
+            
+	      print "(clicks: " . $row['clicks'] . ")";
+        print "<br/>\n";
+    }
+  }
+
+  function get_all() {
+
+    $links = new Links_Model();
+    $a_links = $links->get_all();
+
+    $i = 1;
+    // echo "<div id='all'>\n";
+    foreach ($a_links as $row) {
+    
+      if ($i == 1) {
+        // do nothing
+      } else {
+        // print "<div class='row'>\n";
+    
+	      print $row['url'];
+        print "&nbsp;";
+	
+	
+	      print "<a href='/s/t/" . $row['short_link'] . "'>http://". $_SERVER['SERVER_NAME'] . "/s/t/" . $row['short_link'] . "</a>";
+        print "&nbsp;";
+	      
+	      print "(clicks: " . $row['clicks'] . ")";
+        print "<br/>\n";
+ 
+      }
+      $i++;
+    
+    }
+    // echo "</div>\n";
+
+
+  }
+
   function add() {
 
     
