@@ -14,7 +14,11 @@ class Links_Model {
   }
 
   function add() {
-
+    $dbh = dbConnect();
+    $sql = 'insert into links (url, short_link, created_at) values ("' . $this->url .
+      '", "' . $this->short_link . '", now())';
+    $res = mysql_query($sql);
+    mysql_close($dbh);
   }
 
   function update() {

@@ -14,5 +14,13 @@
 
 <body class="home">
 
+
+<form id="myForm" method="POST" action="/links/add">
+<label>Add a url to shorten</label>
+<input type='text' name='url' id='url'> 
+<input type='submit' name='pressed' value='Shorten'>
+</form>
+
+
 </body>
 </html>
