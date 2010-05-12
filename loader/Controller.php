@@ -22,12 +22,17 @@ class Controller {
     $a_requests = split('/', $this->request); 
     print_r($a_requests);
 
+    if (!$a_requests[1]) {
+      $my_class = 'links';
+    } else {
+      $my_class = $a_requests[1];
+    }
     // autoload model
-    require_once(BASEPATH.'models/'. $a_requests[1] . '_model.php');
+    require_once(BASEPATH.'models/'. $my_class . '_model.php');
     // load controller
-    require_once(BASEPATH.'controllers/'. $a_requests[1] . '.php');
+    require_once(BASEPATH.'controllers/'. $my_class . '.php');
     
-    $my_class = ucfirst($a_requests[1]);
+    $my_class = ucfirst($my_class);
     $my_ct    = new $my_class();
 
     // TODO: parse rest of a_requests

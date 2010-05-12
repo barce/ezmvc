@@ -2,7 +2,6 @@
 
 
 require_once(BASEPATH.'lib/spyc.php');
-echo 'loaded spyc';
 
 class Servers {
 
@@ -13,8 +12,9 @@ class Servers {
   }
 
   static function getConnections() {
-
-    self::$a_connections = Spyc::YAMLLoad(BASEPATH.'connect.yaml');
+    
+    self::$a_connections = Spyc::YAMLLoad(BASEPATH. 'connect.yaml');
+     return self::$a_connections;
 
   }
 
