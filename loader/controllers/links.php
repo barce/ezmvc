@@ -34,6 +34,9 @@ class Links {
     }
 
     echo "added {$links->url} with a shortlink of: <a href='/s/t/{$links->short_link}'>/s/t/{$links->short_link}</a>";
+    echo "<br/>\n";
+    echo "<a href='/links/'>add another link</a>";
+
 
   }
 
