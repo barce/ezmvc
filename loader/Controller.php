@@ -45,6 +45,21 @@ class Controller {
   }
 }
 
+/*
+ * helper functions for xss and sql injection
+ */
+
+function clean($s_data) {
+
+  // strip ';'
+  $s_data = str_replace("%3B",'', $s_data);
+  $s_data = str_replace("%3b",'', $s_data);
+  $s_data = str_replace(";", '', $s_data);
+
+  return $s_data;
+}
+
+
 
 $c = new Controller();
 $c->load();
