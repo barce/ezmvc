@@ -34,7 +34,10 @@ class S {
     mysql_close($dbh);
 
 
-    echo $url;
+    header("location: $url");
+    echo "<script>\n";
+    echo "window.location='$url';";
+    echo "</script>\n";
   }
 
 
