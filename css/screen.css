@@ -1,6 +1,11 @@
 /* screen.css */
+body {
 
-#url {
+  font-family: Verdana, Sans-Serif;
 
-  width: 400px;
+
+}
+a:hover {
+  background: #00f;
+  color: #fff;
 }
