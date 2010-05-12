@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" id="l33tcave-com">
 <head>
   <meta charset="utf-8">
   <title><?= $title ?></title>

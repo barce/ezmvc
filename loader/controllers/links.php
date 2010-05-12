@@ -39,13 +39,14 @@ class Links {
 
     $i = 1;
     // echo "<div id='all'>\n";
+	 echo "<ul>\n";
     foreach ($a_links as $row) {
     
       if ($i == 1) {
         // do nothing
       } else {
         // print "<div class='row'>\n";
-    
+		  print "<li>\n"; 
 	      print $row['url'];
         print "&nbsp;";
 	
@@ -54,12 +55,13 @@ class Links {
         print "&nbsp;";
 	      
 	      print "(clicks: " . $row['clicks'] . ")";
-        print "<br/>\n";
+		  print "</li>\n"; 
  
       }
       $i++;
     
     }
+	 echo "</ul>\n";
     // echo "</div>\n";
 
 

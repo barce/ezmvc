@@ -18,8 +18,8 @@ class Links_Model {
       return;
     }
     $dbh = dbConnect();
-    $sql = 'insert into links (url, short_link, created_at) values ("' . $this->url .
-      '", "' . $this->short_link . '", now())';
+    $sql = 'insert into links (url, short_link, created_at, clicks) values ("' . $this->url .
+      '", "' . $this->short_link . '", now(), 0)';
     $res = mysql_query($sql);
     mysql_close($dbh);
   }
