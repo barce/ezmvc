@@ -18,9 +18,9 @@ class Controller {
   }
 
   function load() {
-    print $this->request . "<br/>\n";
+    // print $this->request . "<br/>\n";
     $a_requests = split('/', $this->request); 
-    print_r($a_requests);
+    // print_r($a_requests);
 
     if (!$a_requests[1]) {
       $my_class = 'links';

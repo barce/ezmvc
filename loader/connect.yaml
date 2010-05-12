@@ -1,0 +1,17 @@
+a_dbConnect:
+   host: 127.0.0.1
+   user: root
+   pass: "fx3I*db7"
+   db: barce
+
+sphinx:
+    db_host: localhost
+    port: 3312
+    db_host_failover: localhost
+
+memcached:
+    host: 127.0.0.1
+    port: 11211
+
+
+

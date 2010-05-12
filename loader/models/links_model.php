@@ -35,9 +35,9 @@ class Links_Model {
   function get_all() {
     $dbh = dbConnect();
     $sql = "select * from links";
-    $res = mysql_query($sql);
+    $res = mysql_query($sql, $dbh);
     $a_all = array();
-    while ($row = mysql_fetch_assoc($result)) {
+    while ($row = mysql_fetch_assoc($res)) {
       $a_all[] = $row;
     }
 
