@@ -41,7 +41,7 @@ class Links_Model {
 
   function get_all() {
     $dbh = dbConnect();
-    $sql = "select * from links order by id desc";
+    $sql = "select * from links order by id desc limit 20";
     $res = mysql_query($sql, $dbh);
     $a_all = array();
     while ($row = mysql_fetch_assoc($res)) {
