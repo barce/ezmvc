@@ -21,6 +21,7 @@ class S {
     $res = mysql_query($sql, $dbh);
     $row = mysql_fetch_assoc($res);
     $url = $row['url'];
+	 if (strlen($url) <= 0) { return; }
 
     $sql    = "select clicks from links where short_link = '$s_tag'";
     $res    = mysql_query($sql, $dbh);
