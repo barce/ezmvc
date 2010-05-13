@@ -5,6 +5,20 @@ This app shortens urls.
 * works only in docroot
 * issues with linking to css and js
 
+How to install:
+
+1. mysql dbname < links.sql
+2. change docroot to the ezmvc folder
+3. create a file in ezmvc/loader called connect.yaml which should have:
+
+a_dbConnect:
+  host: 127.0.0.1
+  user: dbuser
+  pass: your_password
+  db: dbname
+
+4. restart apache
+
 Copyright
 
 (The MIT License)
