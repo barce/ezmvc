@@ -81,13 +81,17 @@ $(document).ready(function(){
 </head>
 
 <body> 
-
+<h3>Add a URL to shorten</h3>
 <form id="myForm" method="POST" action="/links/add">
-Add a url to shorten
-<input type='text' name='url' id='url'> 
+<textarea name='url' id='url' rows='7' cols='50'>
+</textarea>
 <input type='submit' class="button" id='pressed' name='pressed' value='Shorten'>
 </form>
-
+<div id='source'>
+<p>
+<a href="http://github.com/barce/ezmvc">the source on github</a>
+</p>
+</div>
 <div id='newurl'>
 please turn on javascript
 </div>
